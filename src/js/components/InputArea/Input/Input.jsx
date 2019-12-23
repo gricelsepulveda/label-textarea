@@ -1,5 +1,5 @@
-import React, { Fragment, useRef, useState } from "react"
-import { charRuler } from "@utilities/charRuler.js"
+import React, { Fragment, useState } from "react"
+import { charRuler } from "../charRuler.js"
 
 
 const InputArea = (props) => {
@@ -150,7 +150,7 @@ const InputArea = (props) => {
                     filledStatus ? (
                         <Fragment>
                             <button className="gs-input-area-button-close" type="button" onClick={() => handleClose()}>
-                                <i className="gs-font close"></i>
+                                <i className="font close"></i>
                             </button>
                         </Fragment>
                     )

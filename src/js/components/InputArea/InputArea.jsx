@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react"
 import Input from "./Input/Input.jsx"
 
 //Styles
-import './input-area.scss'
+import '../../../styles/components/input-area.scss'
 
 function initializeRenderInputs (values) {
     if (values !== undefined && Array.isArray(values)) {
