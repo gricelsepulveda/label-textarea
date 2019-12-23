@@ -1,0 +1,139 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.gs-input-area {
+    height: 200px;
+    width: 100%;
+    position: relative;
+    border: 1px solid $border;
+    box-sizing: border-box;
+    background-color: lighten($border, 7%);
+    .gs-input-area-container {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        .gs-input-area-input {
+            height: 36px;
+            width: auto;
+            margin-right: 5px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            input {
+                position: relative;
+                border: 0;
+                width: 5px;
+                height: 100%;
+                outline: 0;
+                background: transparent;
+                color: $black;
+                font: {
+                    size: 13px;
+                    weight: 500;
+                }
+                &:active, &:focus {
+                    outline: 0;
+                }
+            }
+            button.gs-input-area-button-close {
+                width: 36px;
+                height: 36px;
+                box-sizing: border-box;
+                background: rgba($white, 0.25);
+                border: 0;
+                margin-left: 5px;
+                cursor: pointer;
+                i {
+                    color: $white;
+                    font: {
+                        size: 12px;
+                    }
+                }
+            }
+            &.filled {
+                border-radius: 8px;
+                padding-left: 10px;
+                input {
+                    color: $white;
+                    cursor: not-allowed;
+                    pointer-events: none;
+                }
+                &.default {
+                    background-color: $border;
+                }
+                &.primary {
+                    background-color: $primary;
+                }
+                &.secondary {
+                    background-color: lighten($secondary, 20%);
+                }
+                &.alert {
+                    background-color: $alert;
+                }
+                &.accent {
+                    background-color: $accent;
+                }
+                &.error {
+                    background-color: $error;
+                }
+                &.black {
+                    background-color: $black;
+                }
+                &.gocloud {
+                    background-color: $gocloud;
+                }
+                &.success {
+                    background-color: $success;
+                }
+            }
+            .gs-inputarea-alert {
+                max-width: 300px;
+                height: auto;
+                position: absolute;
+                bottom: calc(100% + 15px);
+                left: calc(50% - 150px);
+                .gs-inputarea-alertwrapper {
+                    border-radius: 4px;
+                    padding: 5px 10px 5px 10px;
+                    box-sizing: border-box;
+                    position: relative;
+                    background-color: $alert;
+                    @include shadow;
+                    width: 100%;
+                    > p {
+                        text-align: center;
+                        color: $white;
+                        display: block;
+                        width: 100%;
+                        font: {
+                            size: 12px;
+                            weight: 500;
+                        }
+                    }
+                }
+                &:after {
+                    content: "";
+                    position: absolute;
+                    bottom: -5px;
+                    width: 10px;
+                    height: 10px;
+                    transform: rotate(45deg);
+                    left: calc(50% - 5px);
+                    background-color: $alert;
+                }
+            }
+        }
+    }
+}
