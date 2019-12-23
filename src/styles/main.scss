@@ -1,0 +1,171 @@
+@import './variables.scss';
+@import './mixins.scss';
+@import './fonts.scss';
+
+
+body {
+  @include zero-soft;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background-color: rgba($black, 0.05);
+  font: {
+    family: 'Poppins', 'Trebuchet MS', sans-serif;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100vw;
+  height: auto;
+  min-height: 100vh;
+  @include zero-soft;
+  z-index: 0;
+  overflow-x: hidden;
+  position: relative;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: center;
+  background-color: rgba($black, 0.05);
+}
+
+.gc-view {
+  width: 100vw;
+  @media #{$screen-limit}{
+    width: 1600px;
+  }
+  position: relative;
+  margin: 0 auto;
+  height: auto;
+  min-height: 100vh;
+  overflow-x: hidden;
+  @include zero-soft;
+  background-color: $white;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  @include zero-soft;
+  @include clean-webkit;
+}
+
+h1 {
+  font: {
+    size: 56px;
+    weight: 600;
+  }
+  line-height: 64px;
+  text: {
+    transform: uppercase;
+  }
+  @media #{$sm}{
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+
+h2 {
+  font: {
+    size: 42px;
+    weight: 600;
+  }
+  line-height: 54px;
+  @media #{$sm}{
+    //
+  }
+}
+
+h3 {
+  font: {
+    size: 24px;
+    weight: 500;
+  }
+  line-height: 42px;
+  text-transform: uppercase;
+  @media #{$sm}{
+    //
+  }
+}
+
+h4 {
+  font: {
+    size: 24px;
+    weight: 500;
+  }
+  line-height: 42px;
+  text-transform: capitalize;
+  @media #{$sm}{
+    //
+  }
+}
+
+h5 {
+  width: 100%;
+  @include flex-row-center;
+  justify-content: flex-start !important;
+  position: relative;
+  font: {
+    size: 38px;
+    weight: 600;
+  }
+  padding-left: 120px !important;
+  text-align: left;
+  @media #{$sm}{
+    font-size: 28px;
+    text-align: center;
+    padding-left: 0px !important;
+    padding-bottom: 40px !important;
+    justify-content: center !important;
+  }
+
+  &:before {
+    position: absolute;
+    width: 100px;
+    height: 6px;
+    top: 22px;
+    left: 0px;
+    content: '';
+    @include gc-gradient;
+    @media #{$sm}{
+      width: 50px;
+      top: calc(100% - 25px);
+      left: calc(50vw - 25px - 20px);
+    }
+  }
+}
+
+h6 {
+  font: {
+    size: 62px;
+    weight: 600;
+  }
+  text: {
+    align: center;
+    transform: capitalize;
+  }
+}
+
+p {
+  font: {
+    size: 16px;
+    weight: 400;
+  }
+  line-height: 34px;
+
+  &.stretch {
+    line-height: 20px;
+  }
+}
+
+a {
+  text-decoration: none;
+
+  &:hover, &:focus, &:visited, &:active {
+    text-decoration: none;
+  }
+}
